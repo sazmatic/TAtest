@@ -444,19 +444,22 @@ main {
 #site-intro {
   max-width: 750px;
   margin: 1.5rem auto;
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.25rem;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--primary-dark);
-  font-size: 1rem;
-  background: transparent;
+  font-size: 0.95rem;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 }
 
 #site-intro h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 #site-intro p {
