@@ -82,45 +82,55 @@ header {
 }
 }
 
-#tentative-agreements {
-  margin-top: 2rem;
-  padding: 2.5rem 2rem;
-  background: linear-gradient(to bottom, #ffffff, #f9fafc);
-  border-radius: 12px;
-  max-width: 950px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-#tentative-agreements summary {
-  font-size: 1.4rem;
-  font-weight: 700;
-  padding: 1rem 0;
-  cursor: pointer;
-  color: var(--primary);
+/* Tentative Agreements main dropdown bar */
+#tentative-agreements > summary.ta-title {
+  background-color: var(--accent);
+  color: var(--primary-dark);
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin: 0 auto 2rem auto; /* center */
+  
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  cursor: pointer;
+  flex-wrap: wrap;      /* allows wrapping if needed */
+  white-space: normal;  /* prevents zoom-out */
   list-style: none;
-  border-bottom: 1px solid #ddd;
+  position: relative;
 }
 
-#tentative-agreements summary::marker,
-#tentative-agreements summary::-webkit-details-marker {
+/* Hide browser’s default arrow completely */
+#tentative-agreements summary::-webkit-details-marker,
+#tentative-agreements summary::marker {
   display: none;
+  content: "";
 }
 
-#tentative-agreements summary::after {
+/* Single custom arrow */
+#tentative-agreements > summary.ta-title::after {
   content: "▼";
   font-size: 1rem;
-  color: var(--accent);
+  color: var(--primary-dark);
+  margin-left: 0.5rem;
   transition: transform 0.3s ease;
 }
 
-#tentative-agreements[open] summary::after {
+/* Rotate arrow when open */
+#tentative-agreements[open] > summary.ta-title::after {
   transform: rotate(180deg);
+}
+
+/* Optional: checkmark before text (not emoji) */
+#tentative-agreements > summary.ta-title::before {
+  content: "\2713"; /* Unicode checkmark */
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  color: var(--primary-dark);
 }
 
 #button-list {
