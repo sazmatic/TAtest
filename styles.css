@@ -443,12 +443,32 @@ main {
 }
 #site-intro {
   max-width: 900px;
-  margin: 2rem auto 1rem auto;
-  padding: 0 1rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--primary-dark);
+  margin: 2.5rem auto;
+  padding: 2rem 2.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   text-align: center;
+  line-height: 1.7;
+  color: var(--primary-dark);
+}
+
+#site-intro h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+#site-intro p {
+  font-size: 1.05rem;
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+}
+
+#site-intro strong {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .subpoint {
