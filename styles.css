@@ -82,25 +82,27 @@ header {
 }
 }
 
-/* 1) Kill ALL other arrows on TA summaries */
-#tentative-agreements summary::after { content: none !important; }
-#tentative-agreements summary::-webkit-details-marker,
-#tentative-agreements summary::marker { display: none; }
+/* ===== TA DROPDOWN: HARD RESET ===== */
 
-/* 2) Make the container narrow and centered (no big card around it) */
+/* Center inline content inside the details */
 #tentative-agreements {
-  max-width: 900px;
+  text-align: center;        /* <-- centers the pill */
+  max-width: 950px;
   margin: 16px auto;
-  padding: 0;                 /* remove extra padding that made it look wide */
-  background: transparent;    /* no gradient behind the bar */
+  padding: 0;
+  background: transparent;
   box-shadow: none;
   border-radius: 0;
-  text-align: center;         /* so the pill can center */
 }
 
-/* 3) Make the gold bar a compact, centered pill */
+/* Kill native marker + any other custom arrow you defined earlier */
+#tentative-agreements summary::-webkit-details-marker,
+#tentative-agreements summary::marker { display: none; }
+#tentative-agreements summary::after { content: none !important; }  /* <-- nukes duplicate arrow */
+
+/* The pill itself (ONE arrow only) */
 #tentative-agreements > summary.ta-title {
-  display: inline-flex;       /* shrink to content width */
+  display: inline-flex;       /* shrink to content */
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -111,36 +113,39 @@ header {
   font-size: 1.1rem;
   padding: 0.6rem 1rem;
   border-radius: 999px;       /* pill */
-  margin: 0 auto 1rem;
+  margin: 0 auto 1rem;        /* with text-align:center on parent -> centered */
   cursor: pointer;
-  white-space: nowrap;        /* stay on one line if possible */
+
+  white-space: nowrap;        /* try to stay on one line */
 }
 
-/* 4) Add exactly ONE arrow and rotate it on open */
+/* One arrow we control */
 #tentative-agreements > summary.ta-title::after {
   content: "▾";
   font-size: 0.95rem;
   line-height: 1;
   color: var(--primary-dark);
   margin-left: 0.25rem;
-  transition: transform 0.2s ease;
+  transition: transform .2s ease;
 }
 #tentative-agreements[open] > summary.ta-title::after { transform: rotate(180deg); }
 
-/* 5) Optional: add a compact checkmark before text */
+/* Optional checkmark before text */
 #tentative-agreements > summary.ta-title::before {
   content: "\2713";
   font-size: 0.95rem;
-  margin-right: 0.25rem;
   line-height: 1;
+  margin-right: 0.25rem;
+  color: var(--primary-dark);
 }
 
-/* 6) Mobile tweak so it never forces page zoom */
+/* Mobile: avoid zoom-out */
 @media (max-width: 420px) {
   #tentative-agreements > summary.ta-title {
     font-size: 1rem;
     padding: 0.5rem 0.85rem;
     gap: 0.4rem;
+    white-space: normal;  /* allow wrap if truly needed */
   }
 }
 
