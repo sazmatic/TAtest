@@ -356,16 +356,17 @@ main {
   font-size: 1.2rem;
   padding: 1rem 1.25rem;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto; /* center in container */
 
-  display: inline-flex;              /* centers content as one unit */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 
-  max-width: 100%;
-  text-align: center;
   cursor: pointer;
+  flex-wrap: wrap;
+  white-space: normal;
+}
 
   /* allow wrapping on tiny screens so the page never zooms out */
   flex-wrap: wrap;
@@ -540,3 +541,11 @@ main {
 /* remove extra paragraph whitespace inside cards */
 .ta-content p:first-child { margin-top: 0; }
 .ta-content p:last-child  { margin-bottom: 0; }
+
+/* Hide browser's default arrow */
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::marker {
+  content: "";
+}
