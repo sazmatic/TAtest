@@ -86,6 +86,11 @@ header {
 #tentative-agreements summary::marker {
   display: none;
 }
+
+/* This forces only the title to center */
+#tentative-agreements summary {
+  display: flex;
+  justify-content: center;
 /* Center ONLY the title/button */
 #tentative-agreements > summary.ta-title {
   display: inline-flex;
