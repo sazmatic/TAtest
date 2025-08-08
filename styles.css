@@ -115,6 +115,9 @@ header {
   white-space: nowrap;
 }
 
+#tentative-agreements .ta-article {
+  text-align: left;
+}
 /* Checkmark before text */
 #tentative-agreements > summary.ta-title::before {
   content: "✔";
