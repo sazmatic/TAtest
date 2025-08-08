@@ -87,42 +87,23 @@ header {
   display: none;
 }
 
-/* This forces only the title to center */
-#tentative-agreements summary {
-  display: flex;
-  justify-content: center;
-/* Center ONLY the title/button */
+/* Center only the title button */
 #tentative-agreements > summary.ta-title {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
-  margin: 0 auto 1rem auto; /* centers horizontally */
+  margin: 0 auto 1rem auto;
   background: var(--accent);
   color: var(--primary-dark);
   font-weight: 700;
-  font-size: 1.3rem; /* slightly bigger */
-  padding: 0.8rem 1.5rem; /* bigger button feel */
+  font-size: 1.3rem; /* bigger button */
+  padding: 0.8rem 1.5rem;
   border-radius: 999px;
   cursor: pointer;
   white-space: nowrap;
-
-  background: var(--accent);
-  color: var(--primary-dark);
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 0.6rem 1rem;
-  border-radius: 999px;
-  margin: 0 auto 1rem;
-  cursor: pointer;
-
-  white-space: nowrap;
 }
 
-#tentative-agreements .ta-article {
-  text-align: left;
-}
 /* Checkmark before text */
 #tentative-agreements > summary.ta-title::before {
   content: "✔";
@@ -142,6 +123,11 @@ header {
 
 #tentative-agreements[open] > summary.ta-title::after {
   transform: rotate(180deg);
+}
+
+/* TA articles */
+#tentative-agreements .ta-article {
+  text-align: left;
 }
 
 /* Responsive adjustments */
@@ -253,6 +239,7 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Intro text */
 #site-intro {
   max-width: 800px;
   margin: 2rem auto 1.5rem auto;
@@ -263,6 +250,7 @@ footer {
   text-align: center;
   opacity: 0.85;
 }
+
 #site-intro p {
   margin: 0;
 }
