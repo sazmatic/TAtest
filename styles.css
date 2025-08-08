@@ -87,12 +87,13 @@ header {
   display: none;
 }
 
-/* Main pill title */
+/* Center just the TA title/button */
 #tentative-agreements > summary.ta-title {
+  margin-left: auto;
+  margin-right: auto;
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+}
 
   background: var(--accent);
   color: var(--primary-dark);
