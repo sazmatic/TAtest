@@ -350,22 +350,24 @@ main {
 .ta-title {
   background-color: var(--accent);
   color: var(--primary-dark);
-  font-size: 1.1rem;
-  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 1rem 0;
   border-radius: 8px;
   margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  text-align: center;
+  list-style: none; /* hides default arrow */
 }
 
-.ta-icon,
-.ta-label,
-.ta-arrow {
-  display: inline-block;
+.ta-title-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* space between items */
+}
+
+.checkmark,
+.arrow {
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
 #tentative-agreements details {
