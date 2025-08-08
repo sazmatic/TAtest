@@ -463,18 +463,6 @@ main {
 #site-intro:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
-
-#site-intro h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 0.35rem;
-}
-
-#site-intro p {
-  margin: 0;
-  opacity: 0.85;
-}
 .subpoint {
   margin-left: 2em;        /* pushes the block in */
   text-indent: -1.5em;     /* pulls first line back so letter sticks out */
