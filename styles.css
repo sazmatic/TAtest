@@ -81,13 +81,14 @@ header {
   margin: 16px auto;
 }
 
-/* Remove default arrow */
+/* Remove browser default arrow completely */
 #tentative-agreements summary::-webkit-details-marker,
 #tentative-agreements summary::marker {
-  display: none;
+  display: none !important;
+  content: "";
 }
 
-/* Center only the title button */
+/* Center the TA title button */
 #tentative-agreements > summary.ta-title {
   display: inline-flex;
   align-items: center;
@@ -97,7 +98,7 @@ header {
   background: var(--accent);
   color: var(--primary-dark);
   font-weight: 700;
-  font-size: 1.3rem; /* bigger button */
+  font-size: 1.3rem;
   padding: 0.8rem 1.5rem;
   border-radius: 999px;
   cursor: pointer;
@@ -112,7 +113,7 @@ header {
   color: var(--primary-dark);
 }
 
-/* One custom arrow */
+/* Single custom arrow */
 #tentative-agreements > summary.ta-title::after {
   content: "▾";
   font-size: 0.95rem;
@@ -125,12 +126,11 @@ header {
   transform: rotate(180deg);
 }
 
-/* TA articles */
+/* Inside TA articles */
 #tentative-agreements .ta-article {
   text-align: left;
 }
 
-/* Responsive adjustments */
 @media (max-width: 420px) {
   #tentative-agreements > summary.ta-title {
     font-size: 1rem;
@@ -139,7 +139,6 @@ header {
   }
 }
 
-/* Inside TA articles */
 .ta-article {
   background-color: var(--white);
   border-top: 6px solid var(--accent);
