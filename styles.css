@@ -1,0 +1,526 @@
+:root {
+  --primary: #203751;
+  --primary-dark: #142535;
+  --accent: #efc056;
+  --background: #f4f6f9;
+  --text: #142535;
+  --white: #ffffff;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+}
+
+header {
+  background-color: var(--primary);
+  color: var(--accent);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.logo {
+  max-height: 120px;
+  width: auto;
+}
+
+.site-info h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.site-info p {
+  margin: 0.3rem 0;
+  font-weight: bold;
+  color: white;
+}
+
+.site-info small {
+  color: #ddd;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .header-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+@media (max-width: 600px) {
+  .logo {
+    max-height: 120px;
+  }
+
+  .header-flex {
+    flex-direction: column;
+    gap: 0.5rem; /* reduce spacing between logo and title */
+    padding: 1rem 0; /* reduce padding */
+  }
+
+  .site-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .site-info p {
+    font-size: 1rem;
+  }
+
+  .site-info small {
+    font-size: 0.85rem;
+  }
+}
+}
+
+#tentative-agreements {
+  margin-top: 2rem;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(to bottom, #ffffff, #f9fafc);
+  border-radius: 12px;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+#tentative-agreements summary {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 1rem 0;
+  cursor: pointer;
+  color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#tentative-agreements summary::marker,
+#tentative-agreements summary::-webkit-details-marker {
+  display: none;
+}
+
+#tentative-agreements summary::after {
+  content: "▼";
+  font-size: 1rem;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+#tentative-agreements[open] summary::after {
+  transform: rotate(180deg);
+}
+
+#button-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+#button-list button {
+  background-color: var(--accent);
+  color: var(--primary-dark);
+  font-weight: bold;
+  padding: 0.8rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#button-list button:hover {
+  background-color: #f1b935;
+  transform: scale(1.05);
+}
+
+.ta-article {
+  background-color: var(--white);
+  border-top: 6px solid var(--accent); /* yellow strip on top */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+}
+}
+
+.ta-header h2 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.ta-meta {
+  color: #666;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ta-content ul {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.ta-content li {
+  margin-bottom: 0.5rem;
+}
+
+#negotiation-updates {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  border-top: 4px solid var(--accent);
+  border-radius: 8px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+#negotiation-updates h2 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#negotiation-updates details {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#negotiation-updates summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+#negotiation-updates img {
+  margin-top: 1rem;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+footer {
+  background-color: var(--primary-dark);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+#faq-section {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  border-top: 4px solid var(--accent);
+  border-radius: 8px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+#faq-section h2 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#faq-section details {
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#faq-section summary {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+#faq-section p {
+  margin-top: 0.75rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Fix mobile responsiveness closing tag */
+@media (max-width: 600px) {
+  .header-flex {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    max-height: 120px;
+  }
+
+  .site-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .site-info p {
+    font-size: 1rem;
+  }
+
+  .site-info small {
+    font-size: 0.85rem;
+  }
+} /* <--- this bracket was missing in your CSS */
+
+/* Tentative Agreements header styling */
+#tentative-agreements summary {
+  padding: 0;
+  border: none;
+}
+
+.ta-summary-wrapper {
+  background-color: var(--accent);
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ta-summary-wrapper::after {
+  content: "▼";
+  margin-left: 0.75rem;
+  font-size: 1rem;
+  color: var(--primary-dark);
+  transition: transform 0.3s ease;
+}
+
+#tentative-agreements[open] .ta-summary-wrapper::after {
+  transform: rotate(180deg);
+}
+.ta-title {
+  background-color: var(--accent);
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.ta-icon,
+.ta-label,
+.ta-arrow {
+  display: inline-block;
+}
+
+#tentative-agreements details {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+#tentative-agreements summary {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--primary);
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+#tentative-agreements summary::marker,
+#tentative-agreements summary::-webkit-details-marker {
+  display: none;
+}
+
+#tentative-agreements summary::after {
+  content: "▼";
+  float: right;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+#tentative-agreements[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.ta-box {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#tentative-agreements summary.ta-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--primary);
+  padding: 1.2rem;
+  background-color: var(--accent);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  list-style: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+#tentative-agreements summary::-webkit-details-marker {
+  display: none;
+}
+
+#tentative-agreements[open] summary.ta-title::after {
+  content: "▲";
+  float: right;
+  color: var(--primary-dark);
+  margin-left: 1rem;
+}
+
+#tentative-agreements summary.ta-title::after {
+  content: "▼";
+  float: right;
+  color: var(--primary-dark);
+  margin-left: 1rem;
+}
+#site-intro {
+  max-width: 900px;
+  margin: 2rem auto 1rem auto;
+  padding: 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--primary-dark);
+  text-align: center;
+}
+
+.subpoint {
+  margin-left: 2em;        /* pushes the block in */
+  text-indent: -1.5em;     /* pulls first line back so letter sticks out */
+  padding-left: 1.5em;     /* keeps text aligned after letter */
+}
+
+/* main dropdown title (unchanged) */
+.ta-section-title { font-size: 1.2rem; font-weight: 700; }
+
+/* keep title and pill on the same line when space allows */
+.ta-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap; /* lets the pill wrap only on very small screens */
+}
+
+/* hard override any generic h3 span rules that might be making spans block */
+.ta-heading span { display: inline; }
+
+/* the pill */
+.ta-badge{
+  display: inline-flex;        /* stays inline with the title */
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;        /* pill shape */
+  background: #d9e8ff;
+  color: #003366;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* tighten the TA dropdown card */
+#tentative-agreements {
+  background: #fff;
+  border-radius: 16px;
+  padding: 8px;          /* was likely 24–32px */
+  margin: 12px 0;        /* reduce outer gap */
+}
+
+/* kill default details/summary spacing */
+#tentative-agreements,
+#tentative-agreements summary {
+  margin: 0;
+}
+
+/* style only the gold bar, not the whole card */
+#tentative-agreements > summary.ta-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;    /* inner padding of the bar */
+  border-radius: 12px;
+  background: #e7b44a;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* hide native marker so only your ▾ shows */
+#tentative-agreements summary::-webkit-details-marker { display: none; }
+
+/* when open, give a little breathing room for items */
+#tentative-agreements[open] { padding-bottom: 8px; }
+
+/* tighten inside content spacing once open */
+#tentative-agreements > .ta-article { margin: 12px 8px 0; }
+#tentative-agreements > .ta-article:first-of-type { margin-top: 12px; }
+
+/* remove extra paragraph whitespace inside cards */
+.ta-content p:first-child { margin-top: 0; }
+.ta-content p:last-child  { margin-bottom: 0; }
