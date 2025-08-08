@@ -82,55 +82,66 @@ header {
 }
 }
 
-/* Tentative Agreements main dropdown bar */
+/* 1) Kill ALL other arrows on TA summaries */
+#tentative-agreements summary::after { content: none !important; }
+#tentative-agreements summary::-webkit-details-marker,
+#tentative-agreements summary::marker { display: none; }
+
+/* 2) Make the container narrow and centered (no big card around it) */
+#tentative-agreements {
+  max-width: 900px;
+  margin: 16px auto;
+  padding: 0;                 /* remove extra padding that made it look wide */
+  background: transparent;    /* no gradient behind the bar */
+  box-shadow: none;
+  border-radius: 0;
+  text-align: center;         /* so the pill can center */
+}
+
+/* 3) Make the gold bar a compact, centered pill */
 #tentative-agreements > summary.ta-title {
-  background-color: var(--accent);
-  color: var(--primary-dark);
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
-  margin: 0 auto 2rem auto; /* center */
-  
-  display: flex;
+  display: inline-flex;       /* shrink to content width */
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 
+  background: var(--accent);
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;       /* pill */
+  margin: 0 auto 1rem;
   cursor: pointer;
-  flex-wrap: wrap;      /* allows wrapping if needed */
-  white-space: normal;  /* prevents zoom-out */
-  list-style: none;
-  position: relative;
+  white-space: nowrap;        /* stay on one line if possible */
 }
 
-/* Hide browser’s default arrow completely */
-#tentative-agreements summary::-webkit-details-marker,
-#tentative-agreements summary::marker {
-  display: none;
-  content: "";
-}
-
-/* Single custom arrow */
+/* 4) Add exactly ONE arrow and rotate it on open */
 #tentative-agreements > summary.ta-title::after {
-  content: "▼";
-  font-size: 1rem;
+  content: "▾";
+  font-size: 0.95rem;
+  line-height: 1;
   color: var(--primary-dark);
-  margin-left: 0.5rem;
-  transition: transform 0.3s ease;
+  margin-left: 0.25rem;
+  transition: transform 0.2s ease;
 }
+#tentative-agreements[open] > summary.ta-title::after { transform: rotate(180deg); }
 
-/* Rotate arrow when open */
-#tentative-agreements[open] > summary.ta-title::after {
-  transform: rotate(180deg);
-}
-
-/* Optional: checkmark before text (not emoji) */
+/* 5) Optional: add a compact checkmark before text */
 #tentative-agreements > summary.ta-title::before {
-  content: "\2713"; /* Unicode checkmark */
-  font-size: 1rem;
-  margin-right: 0.5rem;
-  color: var(--primary-dark);
+  content: "\2713";
+  font-size: 0.95rem;
+  margin-right: 0.25rem;
+  line-height: 1;
+}
+
+/* 6) Mobile tweak so it never forces page zoom */
+@media (max-width: 420px) {
+  #tentative-agreements > summary.ta-title {
+    font-size: 1rem;
+    padding: 0.5rem 0.85rem;
+    gap: 0.4rem;
+  }
 }
 
 #button-list {
